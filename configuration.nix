@@ -69,26 +69,20 @@
     fuse-overlayfs
     (writeShellScriptBin "nixos-deploy" ''
     set -e
-
-    # 1. Ensure git safe directory setting for /etc/nixos
     git config --global --add safe.directory /etc/nixos 2>/dev/null || true
 
-    # 2. Stage changes so Nix Flakes can see untracked files
     echo "==> Staging configuration changes..."
     git -C /etc/nixos add -A
 
-    # 3. Rebuild and switch system
     echo "==> Rebuilding NixOS..."
     if ! sudo nixos-rebuild switch "$@"; then
       echo "==> Rebuild failed! Aborting git commit."
       exit 1
     fi
 
-    # 4. Extract current generation number directly from profile symlink
     GEN=$(readlink /nix/var/nix/profiles/system | cut -d'-' -f2)
     BUILD_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
-    # 5. Commit and push using current user's SSH keys
     echo "==> Committing and pushing Generation $GEN..."
     if git -C /etc/nixos diff-index --quiet HEAD --; then
       echo "==> No changes detected in Git repository."
