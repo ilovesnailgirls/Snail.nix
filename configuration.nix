@@ -30,7 +30,6 @@
     qbittorrent
     fetchPkg
     brave
-    librewolf
     gpu-screen-recorder
     obs-studio
     kdePackages.qt6ct
@@ -121,12 +120,10 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  # APPIMAGES
   programs.appimage = {
     enable = true;
     binfmt = true;
   };
-  # FLATPAKS
   services.flatpak.enable = true;
   # DESKTOP ENVIRONMENTS & DISPLAY MANAGER
  xdg.portal = {
@@ -164,7 +161,7 @@
   # REQUIRED SERVICES FOR NOCTALIA SHELL
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
-  # INPUT / LAPTOP
+  # INPUT
   services.logind.settings.Login = {
   HandleLidSwitch = "suspend";
   HandleLidSwitchExternalPower = "suspend";
