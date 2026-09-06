@@ -111,6 +111,7 @@
   ];
 
   # PROGRAMS & APPLICATIONS
+  virtualisation.waydroid.enable = true;
   programs.appimage = {
     binfmt = true;
     enable = true;
