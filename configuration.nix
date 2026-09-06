@@ -120,20 +120,25 @@
   };
   services.flatpak.enable = true;
   # DESKTOP ENVIRONMENTS & DISPLAY MANAGER
- xdg.portal = {
-  enable = true;
-  extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
-  config = {
-    common = {
-      default = [ "gtk" ];
-    };
-    niri = {
-      default = lib.mkForce [ "gtk" ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      niri = {
+        default = [ "gnome" "gtk" ];
+      };
+      Plasma = {
+        default = [ "kde" "gtk" ];
+      };
     };
   };
-};
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "kde";
     XDG_MENU_PREFIX = "plasma-";
@@ -152,6 +157,15 @@
     enable = true;
     wayland.enable = true;
   };
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-pipewire-audio-capture
+      obs-vkcapture
+    ];
+  };
+  programs.gpu-screen-recorder.enable = true;
   # REQUIRED SERVICES FOR NOCTALIA SHELL
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
