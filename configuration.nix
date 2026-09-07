@@ -53,6 +53,7 @@
     kdePackages.polkit-kde-agent-1
     kdePackages.qt6ct
     komikku
+    mpv
     protonup-qt
     psmisc
     pywal
