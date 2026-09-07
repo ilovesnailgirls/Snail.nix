@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstablePkgs, fetchPkg, ... }:
+{ config, lib, pkgs, unstablePkgs, fetchPkg, inputs, ... }:
 
 {
   imports = [
@@ -74,7 +74,7 @@
     wineWow64Packages.stable
     xwayland-satellite
     zapzap
-
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     # DEPLOYMENT GIT
     (writeShellScriptBin "nixos-deploy" ''
       set -e
