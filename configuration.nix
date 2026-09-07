@@ -80,21 +80,21 @@
       set -e
       git config --global --add safe.directory /etc/nixos 2>/dev/null || true
 
-      echo "Staging configuration changes..."
+      echo "rebuildiiiing"
       git -C /etc/nixos add -A
 
-      echo "Rebuilding NixOS..."
+      echo "rebuildiiiiiiiiiiiiiiiiiiiiiiing"
       if ! sudo nixos-rebuild switch "$@"; then
-        echo "Rebuild failed! Aborting git commit."
+        echo "rebuild failed (9wd)"
         exit 1
       fi
 
       GEN=$(readlink /nix/var/nix/profiles/system | cut -d'-' -f2)
       BUILD_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
-      echo "Committing and pushing Generation $GEN..."
+      echo "pushing $GEN yo"
       if git -C /etc/nixos diff-index --quiet HEAD --; then
-        echo "No changes detected in Git repository."
+        echo "no changes"
       else
         git -C /etc/nixos commit -m "Generation $GEN ($BUILD_DATE)"
         git -C /etc/nixos push origin main
