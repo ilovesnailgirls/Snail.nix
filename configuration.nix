@@ -111,7 +111,7 @@
     overpass
   ];
 
-  # PROGRAMS & APPLICATIONS
+  # PROGRAMS
   virtualisation.waydroid.enable = true;
   programs.appimage = {
     binfmt = true;
