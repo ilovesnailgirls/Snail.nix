@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstablePkgs, fetchPkg, inputs, ... }:
+{ config, lib, pkgs, unstablePkgs, inputs, ... }:
 
 {
   imports = [
@@ -34,7 +34,6 @@
     cmatrix
     dwarfs
     fastfetch
-    fetchPkg
     file
     fuse-overlayfs
     fuse3
@@ -75,32 +74,39 @@
     wineWow64Packages.stable
     xwayland-satellite
     zapzap
+    inputs.caelestia-shell.packages.${pkgs.system}.default
+    inputs.fetch.packages.${pkgs.system}.default
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     # DEPLOYMENT GIT
     (writeShellScriptBin "nixos-deploy" ''
       set -e
-      git config --global --add safe.directory /etc/nixos 2>/dev/null || true
+
+      FLAKE_DIR="/etc/nixos"
+
+      git config --global --add safe.directory "$FLAKE_DIR" 2>/dev/null || true
 
       echo "Staging configuration changes..."
-      git -C /etc/nixos add -A
+      # Flakes require tracked files to evaluate; staging is essential
+      git -C "$FLAKE_DIR" add -A
 
-      echo "Rebuilding NixOS..."
-      if ! sudo nixos-rebuild switch "$@"; then
-        echo "Rebuild failed! Aborting git commit."
-        exit 1
+      echo "Rebuilding NixOS Flake..."
+      if ! sudo nixos-rebuild switch --flake "$FLAKE_DIR" "$@"; then
+      echo "Rebuild failed! Aborting git commit."
+      exit 1
       fi
 
-      GEN=$(readlink /nix/var/nix/profiles/system | cut -d'-' -f2)
+      # Get current generation number
+      GEN=$(readlink /nix/var/nix/profiles/system | sed -n 's/.*-\([0-9]*\)-link$/\1/p')
       BUILD_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
       echo "Committing and pushing Generation $GEN..."
-      if git -C /etc/nixos diff-index --quiet HEAD --; then
-        echo "No changes detected in Git repository."
+      if git -C "$FLAKE_DIR" diff-index --quiet HEAD --; then
+      echo "No changes detected in Git repository."
       else
-        git -C /etc/nixos commit -m "Generation $GEN ($BUILD_DATE)"
-        git -C /etc/nixos push origin main
+      git -C "$FLAKE_DIR" commit -m "Generation $GEN ($BUILD_DATE)"
+      git -C "$FLAKE_DIR" push origin main
       fi
-    '')
+      '')
   ];
 
   # FONTS
@@ -112,6 +118,10 @@
   ];
 
   # PROGRAMS
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
   virtualisation.waydroid.enable = true;
   programs.appimage = {
     binfmt = true;
