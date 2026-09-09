@@ -14,9 +14,13 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dankmaterialshell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-outputs = { self, nixpkgs, nixpkgs-unstable, fetch, caelestia-shell, noctalia, ... }@inputs:
+outputs = { self, nixpkgs, nixpkgs-unstable, fetch, caelestia-shell, noctalia, dankmaterialshell, ... }@inputs:
   let
     system = "x86_64-linux";
   in {

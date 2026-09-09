@@ -55,6 +55,7 @@
     komikku
     mpv
     protonup-qt
+    pysolfc
     psmisc
     pywal
     pywalfox-native
@@ -76,6 +77,7 @@
     wineWow64Packages.stable
     xwayland-satellite
     zapzap
+    inputs.dankmaterialshell.packages.${pkgs.system}.default
     inputs.caelestia-shell.packages.${pkgs.system}.default
     inputs.fetch.packages.${pkgs.system}.default
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
