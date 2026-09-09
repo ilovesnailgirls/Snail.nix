@@ -38,6 +38,7 @@
     fuse-overlayfs
     fuse3
     gearlever
+    grim
     git
     gnome-tweaks
     heroic
@@ -60,6 +61,7 @@
     qbittorrent
     scrcpy
     snapshot
+    slurp
     spicetify-cli
     squashfuse
     steam-run
