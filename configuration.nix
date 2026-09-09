@@ -60,6 +60,7 @@
     pywal
     pywalfox-native
     qbittorrent
+    quickshell
     scrcpy
     snapshot
     slurp
