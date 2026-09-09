@@ -118,10 +118,7 @@
   ];
 
   # PROGRAMS
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  programs.fish.enable = true;
   virtualisation.waydroid.enable = true;
   programs.appimage = {
     binfmt = true;
