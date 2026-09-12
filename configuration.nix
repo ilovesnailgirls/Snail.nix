@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     appimage-run
+    ghostty
     brave
     bubblewrap
     cmatrix
@@ -53,7 +54,6 @@
     kdePackages.polkit-kde-agent-1
     kdePackages.qt6ct
     komikku
-    mpv
     protonup-qt
     pysolfc
     psmisc
@@ -63,7 +63,6 @@
     quickshell
     scrcpy
     snapshot
-    slurp
     spicetify-cli
     squashfuse
     steam-run
@@ -113,7 +112,6 @@
       fi
       '')
   ];
-
   # FONTS
   fonts.packages = with pkgs; [
     inter
