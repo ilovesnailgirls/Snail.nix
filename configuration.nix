@@ -118,6 +118,7 @@
     nerd-fonts.geist-mono
     nerd-fonts.jetbrains-mono
     overpass
+    fira-code
   ];
 
   # PROGRAMS
