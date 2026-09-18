@@ -15,19 +15,10 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-  # NIX DAEMON & SYSTEM CONFIG
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [ "nix-command" "flakes" ];
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
   };
 
   # USER CONFIGURATION
-  users.users."Snail" = {
+  users.users."snail" = {
     description = "Snail";
     extraGroups = [ "networkmanager" "wheel" ];
     isNormalUser = true;
