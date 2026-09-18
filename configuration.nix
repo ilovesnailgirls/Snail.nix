@@ -123,7 +123,6 @@
 
   # PROGRAMS
   programs.fish.enable = true;
-  programs.starship.enable = true;
   programs.zsh.enable = true;
   virtualisation.waydroid.enable = true;
   programs.appimage = {
