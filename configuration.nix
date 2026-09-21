@@ -27,6 +27,7 @@
 
   # SYSTEM-WIDE PACKAGES
   environment.systemPackages = with pkgs; [
+    localsend
     alacritty
     appimage-run
     ghostty
