@@ -45,6 +45,7 @@
     gnome-tweaks
     heroic
     iptables
+    audacity
     kdePackages.breeze
     kdePackages.breeze-icons
     kdePackages.dolphin
