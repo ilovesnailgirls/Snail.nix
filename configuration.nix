@@ -68,6 +68,7 @@
     spicetify-cli
     squashfuse
     steam-run
+    vscode
     swayidle
     telegram-desktop
     thunderbird
