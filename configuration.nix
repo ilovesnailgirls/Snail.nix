@@ -125,6 +125,7 @@
 
   # PROGRAMS
   programs.fish.enable = true;
+  programs.kdeconnect.enable = true;
   programs.zsh.enable = true;
   virtualisation.waydroid.enable = true;
   programs.appimage = {
