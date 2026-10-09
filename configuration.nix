@@ -31,7 +31,6 @@
     alacritty
     appimage-run
     ghostty
-    brave
     bubblewrap
     cmatrix
     dwarfs
