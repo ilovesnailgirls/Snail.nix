@@ -39,6 +39,7 @@
     fuse-overlayfs
     fuse3
     gearlever
+    krita
     grim
     git
     gnome-tweaks
@@ -70,7 +71,6 @@
     vscode
     swayidle
     telegram-desktop
-    thunderbird
     unrar
     unstablePkgs.noctalia-shell
     unzip
