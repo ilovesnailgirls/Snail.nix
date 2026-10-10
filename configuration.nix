@@ -66,6 +66,7 @@
     scrcpy
     snapshot
     spicetify-cli
+    bottles
     squashfuse
     steam-run
     vscode
