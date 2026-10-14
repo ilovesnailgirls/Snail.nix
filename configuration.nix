@@ -126,6 +126,14 @@
 
   # PROGRAMS
   programs.fish.enable = true;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  openssl icu zlib libkrb5 stdenv.cc.cc.lib
+  nss nspr atk cups dbus libdrm mesa libxkbcommon
+  xorg.libX11 xorg.libXcomposite xorg.libXdamage xorg.libXext
+  xorg.libXfixes xorg.libXrandr xorg.libxcb
+  pango cairo alsa-lib at-spi2-atk gtk3 glib
+  ];
   programs.kdeconnect.enable = true;
   programs.zsh.enable = true;
   virtualisation.waydroid.enable = true;
