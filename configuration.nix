@@ -173,7 +173,8 @@
   };
 
   security.polkit.enable = true;
-
+  programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
+  services.desktopManager.gnome.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {
     enable = true;
