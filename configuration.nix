@@ -52,6 +52,20 @@
     kdePackages.dolphin
     kdePackages.filelight
     kdePackages.kate
+    qt6.qtsvg
+    qt6.qtwayland
+    wl-clipboard
+    cliphist
+    libnotify
+    wf-recorder
+    hyprpicker
+    hyprsunset
+    brightnessctl
+    inotify-tools
+    zenity
+    papirus-icon-theme
+    curl
+    gnutar
     kdePackages.partitionmanager
     kdePackages.plasma-integration
     kdePackages.polkit-kde-agent-1
