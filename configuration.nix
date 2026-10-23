@@ -64,6 +64,7 @@
     pywalfox-native
     qbittorrent
     quickshell
+    qt6.qtshadertools
     scrcpy
     snapshot
     spicetify-cli
