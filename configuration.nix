@@ -30,6 +30,7 @@
     localsend
     alacritty
     appimage-run
+    kitty
     ghostty
     bubblewrap
     cmatrix
@@ -135,6 +136,7 @@
   pango cairo alsa-lib at-spi2-atk gtk3 glib
   ];
   programs.kdeconnect.enable = true;
+  programs.hyprland.enable = true;
   programs.zsh.enable = true;
   virtualisation.waydroid.enable = true;
   programs.appimage = {
