@@ -87,6 +87,7 @@
     steam-run
     vscode
     swayidle
+    calibre
     telegram-desktop
     unrar
     unstablePkgs.noctalia-shell
