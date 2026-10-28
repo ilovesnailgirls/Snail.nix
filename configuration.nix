@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     localsend
     alacritty
+    libreoffice
     appimage-run
     kitty
     ghostty
