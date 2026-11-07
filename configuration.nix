@@ -86,6 +86,7 @@
     bottles
     squashfuse
     steam-run
+    gnome-extension-manager
     vscode
     swayidle
     calibre
@@ -155,7 +156,7 @@
   programs.kdeconnect.enable = true;
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
-  virtualisation.waydroid.enable = true;
+  #virtualisation.waydroid.enable = true;
   programs.appimage = {
     binfmt = true;
     enable = true;
