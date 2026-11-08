@@ -87,6 +87,7 @@
     squashfuse
     steam-run
     gnome-extension-manager
+    cutechess
     vscode
     swayidle
     calibre
