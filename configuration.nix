@@ -54,6 +54,7 @@
     kdePackages.filelight
     kdePackages.kate
     qt6.qtsvg
+    woeusb
     qt6.qtwayland
     wl-clipboard
     cliphist
