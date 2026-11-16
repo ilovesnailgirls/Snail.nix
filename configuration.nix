@@ -89,7 +89,7 @@
     steam-run
     gnome-extension-manager
     cutechess
-    vscode
+    vscodium
     swayidle
     telegram-desktop
     unrar
