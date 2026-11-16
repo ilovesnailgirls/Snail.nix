@@ -91,7 +91,6 @@
     cutechess
     vscode
     swayidle
-    calibre
     telegram-desktop
     unrar
     unstablePkgs.noctalia-shell
