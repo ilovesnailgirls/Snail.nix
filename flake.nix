@@ -18,7 +18,12 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
 
 outputs = { self, nixpkgs, nixpkgs-unstable, fetch, caelestia-shell, noctalia, dankmaterialshell, ... }@inputs:
   let
