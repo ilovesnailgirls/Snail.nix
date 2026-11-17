@@ -100,7 +100,7 @@
     wineWow64Packages.stable
     xwayland-satellite
     zapzap
-    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.dankmaterialshell.packages.${pkgs.system}.default
     inputs.caelestia-shell.packages.${pkgs.system}.default
     inputs.fetch.packages.${pkgs.system}.default
