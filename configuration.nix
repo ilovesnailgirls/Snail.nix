@@ -101,6 +101,7 @@
     xwayland-satellite
     zapzap
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.apple-fonts.packages.${pkgs.system}.sf-pro
     inputs.dankmaterialshell.packages.${pkgs.system}.default
     inputs.caelestia-shell.packages.${pkgs.system}.default
     inputs.fetch.packages.${pkgs.system}.default
