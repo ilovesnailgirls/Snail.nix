@@ -54,6 +54,7 @@
     kdePackages.filelight
     kdePackages.kate
     qt6.qtsvg
+    pkgs.canon-capt
     woeusb-ng
     qt6.qtwayland
     wl-clipboard
